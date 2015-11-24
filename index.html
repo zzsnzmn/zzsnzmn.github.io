@@ -4,21 +4,19 @@ layout: default
 <style>
 </style>
 <div class="home">
-    <div id="container">
-      <!-- <p>~stuff about computers~</p> -->
-        <!-- <p id="text"> -->
-          <!-- zzsnzmn -->
-        <!-- </p> -->
-    </div>
-
-  <ul class="posts">
     {% for post in site.posts %}
-      <li>
-      {% comment %}<span class="post-date">{{ post.date | date: "%b %-d" }}</span>{% endcomment %}
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
+    <div class="post">
+      <div class="post-header">
+        <h1><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        <p class="meta">{{ post.date | date: "%b.%-d.%Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+      </div>
+
+      <article class="post-content">
+      {{ post.content }}
+      </article>
+    </div>
     {% endfor %}
-  </ul>
+
 
   {% comment %}<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>{% endcomment %}
 
