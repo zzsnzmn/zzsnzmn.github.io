@@ -1,23 +1,25 @@
-<html>
-  <head>
-    <title>woah zz</title>
-    <style>
-      @import url(http://fonts.googleapis.com/css?family=Mr+Bedfort);
+---
+layout: default
+---
+<style>
+</style>
+<div class="home">
+    <div id="container">
+      <!-- <p>~stuff about computers~</p> -->
+        <!-- <p id="text"> -->
+          <!-- zzsnzmn -->
+        <!-- </p> -->
+    </div>
 
-      html, body { height: 100%; }
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+      {% comment %}<span class="post-date">{{ post.date | date: "%b %-d" }}</span>{% endcomment %}
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
-      body {
-      display: -webkit-flex;
-      display: flex;
-      font-family: 'Mr Bedfort', cursive;
-      font-size: 20vw;
-      margin: 0;
-      overflow: hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <a href="http://freemoney.cashscam.biz">freemoney</a>
-    zz
-  </body>
-</html>
+  {% comment %}<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>{% endcomment %}
+
+</div>

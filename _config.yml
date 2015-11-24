@@ -1,0 +1,12 @@
+# Site settings
+title: zzsnzmn.github.io
+# email: your-email@domain.com
+description: "ops and stuff"
+baseurl: ""
+url: "https://zzsnzmn.github.io"
+# twitter_username: jekyllrb
+# github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+permalink: pretty
